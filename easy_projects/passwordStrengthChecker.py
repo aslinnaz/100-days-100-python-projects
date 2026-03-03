@@ -113,11 +113,19 @@ def strength_check(pw: str) -> dict:
 
     return {"score": score, "label": label, "reasons": reasons, "tips": tips_unique}
 
+def strength_bar(score: int, width: int = 25) -> str:
+    score = max(0, min(100, int(score)))
+    filled = int(round((score / 100) * width))
+    empty = width - filled
+    return f"[{'█' * filled}{'░' * empty}]"
+
+
 if __name__ == "__main__":
     pw = input("Enter a password to check strength: ")
     result = strength_check(pw)
 
-    print(f"\nStrength: {result['label']} ({result['score']}/100)")
+    print(f"\nStrength: {result['label']} ({result['score']}/100)" ,strength_bar(result["score"]))
+    
     if result["reasons"]:
         print("Reasons:")
         for r in result["reasons"]:
