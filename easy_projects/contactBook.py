@@ -1,3 +1,5 @@
+# Simple Contact Book Application
+
 contacts = {}
 
 def menu():
