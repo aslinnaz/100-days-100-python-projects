@@ -1,0 +1,10 @@
+[
+  {
+    "task": "Study",
+    "status": "incompleted"
+  },
+  {
+    "task": "Create a mini app",
+    "status": "completed"
+  }
+]
